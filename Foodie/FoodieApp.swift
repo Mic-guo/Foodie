@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct FoodieApp: App {
-    let persistenceController = PersistenceController.shared
-
+struct tapApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

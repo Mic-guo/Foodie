@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2C92B80C7670017526C /* FoodieApp.swift */; };
-		3978D2CC2B80C7670017526C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2CB2B80C7670017526C /* Persistence.swift */; };
 		3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */; };
 		3978D2D12B80C7670017526C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2D02B80C7670017526C /* ContentView.swift */; };
 		3978D2D32B80C76A0017526C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3978D2D22B80C76A0017526C /* Assets.xcassets */; };
@@ -16,6 +15,17 @@
 		3978D2E12B80C76A0017526C /* FoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2E02B80C76A0017526C /* FoodieTests.swift */; };
 		3978D2EB2B80C76A0017526C /* FoodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2EA2B80C76A0017526C /* FoodieUITests.swift */; };
 		3978D2ED2B80C76A0017526C /* FoodieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2EC2B80C76A0017526C /* FoodieUITestsLaunchTests.swift */; };
+		3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FA2B8116EB0017526C /* Supabase.swift */; };
+		3978D2FE2B8117670017526C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FD2B8117670017526C /* AuthView.swift */; };
+		3978D3002B8119FD0017526C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FF2B8119FD0017526C /* ProfileView.swift */; };
+		3978D3022B811AF30017526C /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3012B811AF30017526C /* Auth */; };
+		3978D3042B811AF30017526C /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3032B811AF30017526C /* Functions */; };
+		3978D3062B811AF30017526C /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3052B811AF30017526C /* PostgREST */; };
+		3978D3082B811AF30017526C /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3072B811AF30017526C /* Realtime */; };
+		3978D30A2B811AF30017526C /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3092B811AF30017526C /* Storage */; };
+		3978D30C2B811AF30017526C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D30B2B811AF30017526C /* Supabase */; };
+		3978D3102B8120000017526C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D30F2B8120000017526C /* Models.swift */; };
+		3978D3152B8124ED0017526C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +48,6 @@
 /* Begin PBXFileReference section */
 		3978D2C62B80C7670017526C /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3978D2C92B80C7670017526C /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
-		3978D2CB2B80C7670017526C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3978D2CE2B80C7670017526C /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
 		3978D2D02B80C7670017526C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3978D2D22B80C76A0017526C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +58,12 @@
 		3978D2E62B80C76A0017526C /* FoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3978D2EA2B80C76A0017526C /* FoodieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieUITests.swift; sourceTree = "<group>"; };
 		3978D2EC2B80C76A0017526C /* FoodieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3978D2FA2B8116EB0017526C /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		3978D2FD2B8117670017526C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		3978D2FF2B8119FD0017526C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3978D30F2B8120000017526C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3978D3132B8123ED0017526C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3978D3142B8124EC0017526C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3978D3062B811AF30017526C /* PostgREST in Frameworks */,
+				3978D3042B811AF30017526C /* Functions in Frameworks */,
+				3978D30C2B811AF30017526C /* Supabase in Frameworks */,
+				3978D3022B811AF30017526C /* Auth in Frameworks */,
+				3978D30A2B811AF30017526C /* Storage in Frameworks */,
+				3978D3082B811AF30017526C /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +120,17 @@
 		3978D2C82B80C7670017526C /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				3978D3132B8123ED0017526C /* Info.plist */,
+				3978D30E2B811FF20017526C /* Models */,
+				3978D2FC2B8117530017526C /* Auth */,
 				3978D2C92B80C7670017526C /* FoodieApp.swift */,
-				3978D2CB2B80C7670017526C /* Persistence.swift */,
 				3978D2D02B80C7670017526C /* ContentView.swift */,
 				3978D2D22B80C76A0017526C /* Assets.xcassets */,
 				3978D2D42B80C76A0017526C /* Foodie.entitlements */,
 				3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */,
 				3978D2D52B80C76A0017526C /* Preview Content */,
+				3978D2FA2B8116EB0017526C /* Supabase.swift */,
+				3978D3142B8124EC0017526C /* Home.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -135,6 +160,23 @@
 			path = FoodieUITests;
 			sourceTree = "<group>";
 		};
+		3978D2FC2B8117530017526C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3978D2FD2B8117670017526C /* AuthView.swift */,
+				3978D2FF2B8119FD0017526C /* ProfileView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3978D30E2B811FF20017526C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3978D30F2B8120000017526C /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,6 +193,14 @@
 			dependencies = (
 			);
 			name = Foodie;
+			packageProductDependencies = (
+				3978D3012B811AF30017526C /* Auth */,
+				3978D3032B811AF30017526C /* Functions */,
+				3978D3052B811AF30017526C /* PostgREST */,
+				3978D3072B811AF30017526C /* Realtime */,
+				3978D3092B811AF30017526C /* Storage */,
+				3978D30B2B811AF30017526C /* Supabase */,
+			);
 			productName = Foodie;
 			productReference = 3978D2C62B80C7670017526C /* Foodie.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +273,9 @@
 				Base,
 			);
 			mainGroup = 3978D2BD2B80C7670017526C;
+			packageReferences = (
+				3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 3978D2C72B80C7670017526C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,10 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */,
 				3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */,
+				3978D2FE2B8117670017526C /* AuthView.swift in Sources */,
+				3978D3102B8120000017526C /* Models.swift in Sources */,
 				3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */,
 				3978D2D12B80C7670017526C /* ContentView.swift in Sources */,
-				3978D2CC2B80C7670017526C /* Persistence.swift in Sources */,
+				3978D3152B8124ED0017526C /* Home.swift in Sources */,
+				3978D3002B8119FD0017526C /* ProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +489,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -470,6 +528,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodie/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -625,6 +684,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3978D3012B811AF30017526C /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		3978D3032B811AF30017526C /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		3978D3052B811AF30017526C /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		3978D3072B811AF30017526C /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		3978D3092B811AF30017526C /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		3978D30B2B811AF30017526C /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3978D2F92B8116730017526C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */ = {
