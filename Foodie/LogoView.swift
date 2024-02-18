@@ -11,7 +11,7 @@ struct LogoView: View {
     var body: some View {
         ZStack {
             Capsule()
-                .fill(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.blue]), startPoint: .leading, endPoint: .trailing))
+                .fill(LinearGradient(gradient: Gradient(colors: [Color.brown, Color.gray]), startPoint: .leading, endPoint: .trailing))
                 .frame(width: 150, height: 50)
                 .shadow(radius: 5)
             Text("Foodie")

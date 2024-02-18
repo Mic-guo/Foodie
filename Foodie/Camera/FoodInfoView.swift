@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Supabase
 import AVFoundation
 import CoreImage
 import UIKit
@@ -40,12 +41,19 @@ struct FoodInfo: Codable {
     }
 }
 
+struct FoodDatabase: Codable {
+  let name: String
+  let ingredients: String
+    let url: String
+}
+
 
 class FoodInfoViewModel: ObservableObject {
     @Published var uploadResult: String = "Still loading..."
     @Published var displayImage: Image?
     @Published var displayNames: [String] = []
     @Published var confidences: [Double] = []
+    @Published var fileName: String = ""
     
     func uploadImage(imageData: Data) {
         guard let url = URL(string: "https://vision.foodvisor.io/api/1.0/en/analysis/") else { return }
@@ -53,7 +61,7 @@ class FoodInfoViewModel: ObservableObject {
         request.httpMethod = "POST"
         
         let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("Api-Key ndhsa84A.XcfqXkcDgOcBxfVKqp9RHKCDUVxv4CZM", forHTTPHeaderField: "Authorization")
+        request.setValue("Api-Key 2PS2AWpv.4kLiPOxSBk4l8m7xW4C0cdW1lwJcFsUr", forHTTPHeaderField: "Authorization")
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         var body = Data()
@@ -62,7 +70,18 @@ class FoodInfoViewModel: ObservableObject {
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
         body.append(imageData)
         body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-
+        
+        Task {
+            do {
+                try await upload2Supabase(imageData: imageData)
+                // Handle success if needed
+            } catch {
+                print("Failed to upload to Supabase: \(error)")
+                DispatchQueue.main.async {
+                    self.uploadResult = "Failed to upload to Supabase: \(error.localizedDescription)"
+                }
+            }
+        }
         
         // Additionally, convert imageData to Image for SwiftUI and assign to displayImage
         DispatchQueue.main.async {
@@ -83,20 +102,7 @@ class FoodInfoViewModel: ObservableObject {
                 }
                 return
             }
-            do {
-                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    DispatchQueue.main.async {
-                        
-                        self.uploadResult = jsonResult.description
-                    }
-                }
-                else {
-                    self.uploadResult = "Nothing as JSON idk why"
-                }
-            } catch {
-                self.uploadResult = "Failed to convert to JSON "
-            }
-            
+
             DispatchQueue.main.async {
                 let (names, confidences) = self.parseJSON(data: data)
                 self.displayNames = names
@@ -131,7 +137,13 @@ class FoodInfoViewModel: ObservableObject {
         
         return (displayNames, confidences)
     }
-
+    
+    func upload2Supabase(imageData: Data) async throws{
+        // Upload to Supabase Storage
+        // Generate a unique file name using UUID
+        self.fileName = "\(UUID().uuidString).jpeg"
+        try await supabase.storage.from("photos").upload(path: self.fileName, file: imageData)
+    }
 
 }
 
@@ -144,35 +156,12 @@ extension Data {
     }
 }
 
-//struct InputField: View {
-//    @State private var inputText: String = ""
-//    var onSubmit: (String) -> Void
-//
-//    var body: some View {
-//        HStack {
-//            TextField("Enter new item", text: $inputText)
-//                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                .onReceive(Just(inputText)) { inputValue in
-//                    print("Current input: \(inputValue)")
-//                }
-//            Button(action: {
-//                // Call the closure with the current input text
-//                onSubmit(inputText)
-//                // Clear the input field after submission
-//                inputText = ""
-//            }) {
-//                Text("Add")
-//            }
-//        }
-//        .padding()
-//    }
-//}
-
 
 struct FoodInfoView: View {
     @ObservedObject var viewModel: FoodInfoViewModel
     @State private var selectedRows: [Bool] = []
     @State private var inputText: String = ""
+    @State private var foodTitle: String = ""
     @Environment(\.presentationMode) var presentationMode // Add this line
 
     var body: some View {
@@ -185,9 +174,6 @@ struct FoodInfoView: View {
             HStack {
                 TextField("Enter new item", text: $inputText)
                     .textFieldStyle(.roundedBorder)
-                    .onReceive(Just(inputText)) { inputValue in
-                        print("Current input: \(inputValue)")
-                    }
                 Spacer()
                 Button(action: {
                     print("Button Pressed")
@@ -207,10 +193,39 @@ struct FoodInfoView: View {
             .listRowSeparator(.hidden)
 //            .listRowBackground(Color.gray)
             .edgesIgnoringSafeArea(.all)
+//            HStack {
+            TextField("Dish name", text: $foodTitle)
+                .textFieldStyle(.roundedBorder)
+
             VStack(alignment: .center) {
                 Spacer()
                 Button("Submit photo info") {
-                    presentationMode.wrappedValue.dismiss()
+                    Task {
+                        let ingredientsString = try? JSONEncoder().encode(viewModel.displayNames)
+                        let ingredientsJSONString = String(data: ingredientsString!, encoding: .utf8)
+                        
+                        let updateData = FoodDatabase(
+                            name: foodTitle,
+                            ingredients: ingredientsJSONString ?? "[]",
+                            url: viewModel.fileName
+                        )
+                        // Perform the update
+                        do {
+                            let response = try await supabase.database
+                                .from("foods")
+                                .insert(updateData)
+                                .execute()
+                            
+                            // Check the response for success or handle errors
+                            print("Update response: \(response)")
+                        } catch {
+                            print("Failed to update food item: \(error)")
+                        }
+                        
+                        DispatchQueue.main.async {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
                 }
                 .padding(3)
                 .background(Color.gray)
@@ -222,11 +237,7 @@ struct FoodInfoView: View {
         }
 //        .background(.gray)
         .navigationTitle("Food Info")
-//        .onAppear {
-//            // Initialize or update selectedRows when the view appears
-//            // This assumes that displayNames is populated before the view appears
-//            self.selectedRows = Array(repeating: false, count: viewModel.displayNames.count)
-//        }
+
         .onChange(of: viewModel.displayNames) { _ in
             // If displayNames has more items, append false to selectedRows for each new item
             if viewModel.displayNames.count > self.selectedRows.count {
