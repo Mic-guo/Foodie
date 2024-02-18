@@ -41,7 +41,6 @@
 		3978D3152B8124ED0017526C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* Home.swift */; };
 		3978D3172B812A7B0017526C /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3162B812A7B0017526C /* Permissions.swift */; };
 		3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3182B8132FA0017526C /* PermissionsView.swift */; };
-		39939DB62B815F900061D0AF /* CameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB52B815F900061D0AF /* CameraApp.swift */; };
 		39939DB82B8167910061D0AF /* InverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB72B8167910061D0AF /* InverseMask.swift */; };
 		39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB92B8169A50061D0AF /* FoodInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -97,7 +96,6 @@
 		3978D3142B8124EC0017526C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		3978D3162B812A7B0017526C /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		3978D3182B8132FA0017526C /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
-		39939DB52B815F900061D0AF /* CameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraApp.swift; sourceTree = "<group>"; };
 		39939DB72B8167910061D0AF /* InverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseMask.swift; sourceTree = "<group>"; };
 		39939DB92B8169A50061D0AF /* FoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +137,6 @@
 				3909FA632B814DF1007D5A37 /* CachedImageManager.swift */,
 				3909FA602B814DF1007D5A37 /* Camera.swift */,
 				3909FA652B814DF1007D5A37 /* CameraView.swift */,
-				39939DB52B815F900061D0AF /* CameraApp.swift */,
 				3909FA672B814DF2007D5A37 /* DataModel.swift */,
 				3909FA6A2B814DF2007D5A37 /* PhotoAsset.swift */,
 				3909FA662B814DF1007D5A37 /* PhotoAssetCollection.swift */,
@@ -385,7 +382,6 @@
 				3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */,
 				3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */,
 				39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */,
-				39939DB62B815F900061D0AF /* CameraApp.swift in Sources */,
 				3909FA772B814DF2007D5A37 /* PhotoLibrary.swift in Sources */,
 				3978D2FE2B8117670017526C /* AuthView.swift in Sources */,
 				3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */,
