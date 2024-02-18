@@ -48,6 +48,7 @@
 		CB76917C2B819FD800FB4CFB /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917B2B819FD800FB4CFB /* LandingView.swift */; };
 		CB76917E2B81A00C00FB4CFB /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917D2B81A00C00FB4CFB /* LogoView.swift */; };
 		CB7691802B81A02200FB4CFB /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917F2B81A02200FB4CFB /* NavigationButtonView.swift */; };
+		CB7691B82B81BACC00FB4CFB /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7691B72B81BACC00FB4CFB /* FriendsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		CB76917B2B819FD800FB4CFB /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		CB76917D2B81A00C00FB4CFB /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		CB76917F2B81A02200FB4CFB /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
+		CB7691B72B81BACC00FB4CFB /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				3909FA5E2B814DD5007D5A37 /* Camera */,
 				3978D30E2B811FF20017526C /* Models */,
 				3978D2FC2B8117530017526C /* Auth */,
+				CB7691B72B81BACC00FB4CFB /* FriendsView.swift */,
 				3978D2D02B80C7670017526C /* ContentView.swift */,
 				3978D3142B8124EC0017526C /* HomeView.swift */,
 				3978D3162B812A7B0017526C /* Permissions.swift */,
@@ -409,6 +412,7 @@
 				3909FA742B814DF2007D5A37 /* PhotoAssetCollection.swift in Sources */,
 				3909FA712B814DF2007D5A37 /* CachedImageManager.swift in Sources */,
 				3978D3172B812A7B0017526C /* Permissions.swift in Sources */,
+				CB7691B82B81BACC00FB4CFB /* FriendsView.swift in Sources */,
 				3909FA6D2B814DF2007D5A37 /* ViewfinderView.swift in Sources */,
 				CB7691782B819ED000FB4CFB /* AuthViewModel.swift in Sources */,
 				3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */,
