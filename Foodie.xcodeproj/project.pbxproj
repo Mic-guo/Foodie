@@ -28,8 +28,8 @@
 		3978D2E12B80C76A0017526C /* FoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2E02B80C76A0017526C /* FoodieTests.swift */; };
 		3978D2EB2B80C76A0017526C /* FoodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2EA2B80C76A0017526C /* FoodieUITests.swift */; };
 		3978D2ED2B80C76A0017526C /* FoodieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2EC2B80C76A0017526C /* FoodieUITestsLaunchTests.swift */; };
-		3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FA2B8116EB0017526C /* Supabase.swift */; };
-		3978D2FE2B8117670017526C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FD2B8117670017526C /* AuthView.swift */; };
+		3978D2FB2B8116EB0017526C /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FA2B8116EB0017526C /* SupabaseClient.swift */; };
+		3978D2FE2B8117670017526C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FD2B8117670017526C /* SignInView.swift */; };
 		3978D3002B8119FD0017526C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2FF2B8119FD0017526C /* ProfileView.swift */; };
 		3978D3022B811AF30017526C /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3012B811AF30017526C /* Auth */; };
 		3978D3042B811AF30017526C /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3032B811AF30017526C /* Functions */; };
@@ -38,11 +38,16 @@
 		3978D30A2B811AF30017526C /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D3092B811AF30017526C /* Storage */; };
 		3978D30C2B811AF30017526C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D30B2B811AF30017526C /* Supabase */; };
 		3978D3102B8120000017526C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D30F2B8120000017526C /* Models.swift */; };
-		3978D3152B8124ED0017526C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* Home.swift */; };
+		3978D3152B8124ED0017526C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* HomeView.swift */; };
 		3978D3172B812A7B0017526C /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3162B812A7B0017526C /* Permissions.swift */; };
 		3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3182B8132FA0017526C /* PermissionsView.swift */; };
 		39939DB82B8167910061D0AF /* InverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB72B8167910061D0AF /* InverseMask.swift */; };
 		39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB92B8169A50061D0AF /* FoodInfoView.swift */; };
+		CB7691782B819ED000FB4CFB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7691772B819ED000FB4CFB /* AuthViewModel.swift */; };
+		CB76917A2B819F8300FB4CFB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7691792B819F8300FB4CFB /* SignUpView.swift */; };
+		CB76917C2B819FD800FB4CFB /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917B2B819FD800FB4CFB /* LandingView.swift */; };
+		CB76917E2B81A00C00FB4CFB /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917D2B81A00C00FB4CFB /* LogoView.swift */; };
+		CB7691802B81A02200FB4CFB /* NavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB76917F2B81A02200FB4CFB /* NavigationButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,16 +93,21 @@
 		3978D2E62B80C76A0017526C /* FoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3978D2EA2B80C76A0017526C /* FoodieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieUITests.swift; sourceTree = "<group>"; };
 		3978D2EC2B80C76A0017526C /* FoodieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3978D2FA2B8116EB0017526C /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
-		3978D2FD2B8117670017526C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		3978D2FA2B8116EB0017526C /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		3978D2FD2B8117670017526C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		3978D2FF2B8119FD0017526C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3978D30F2B8120000017526C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3978D3132B8123ED0017526C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		3978D3142B8124EC0017526C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		3978D3142B8124EC0017526C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3978D3162B812A7B0017526C /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		3978D3182B8132FA0017526C /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
 		39939DB72B8167910061D0AF /* InverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseMask.swift; sourceTree = "<group>"; };
 		39939DB92B8169A50061D0AF /* FoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoView.swift; sourceTree = "<group>"; };
+		CB7691772B819ED000FB4CFB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CB7691792B819F8300FB4CFB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CB76917B2B819FD800FB4CFB /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		CB76917D2B81A00C00FB4CFB /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		CB76917F2B81A02200FB4CFB /* NavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,12 +190,15 @@
 				3909FA5E2B814DD5007D5A37 /* Camera */,
 				3978D30E2B811FF20017526C /* Models */,
 				3978D2FC2B8117530017526C /* Auth */,
-				3978D2C92B80C7670017526C /* FoodieApp.swift */,
 				3978D2D02B80C7670017526C /* ContentView.swift */,
-				3978D2FA2B8116EB0017526C /* Supabase.swift */,
-				3978D3142B8124EC0017526C /* Home.swift */,
+				3978D3142B8124EC0017526C /* HomeView.swift */,
 				3978D3162B812A7B0017526C /* Permissions.swift */,
 				3978D3182B8132FA0017526C /* PermissionsView.swift */,
+				CB76917D2B81A00C00FB4CFB /* LogoView.swift */,
+				CB76917B2B819FD800FB4CFB /* LandingView.swift */,
+				3978D2C92B80C7670017526C /* FoodieApp.swift */,
+				CB76917F2B81A02200FB4CFB /* NavigationButtonView.swift */,
+				3978D2FA2B8116EB0017526C /* SupabaseClient.swift */,
 				3978D2D22B80C76A0017526C /* Assets.xcassets */,
 				3978D2D42B80C76A0017526C /* Foodie.entitlements */,
 				3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */,
@@ -222,7 +235,9 @@
 		3978D2FC2B8117530017526C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3978D2FD2B8117670017526C /* AuthView.swift */,
+				CB7691772B819ED000FB4CFB /* AuthViewModel.swift */,
+				CB7691792B819F8300FB4CFB /* SignUpView.swift */,
+				3978D2FD2B8117670017526C /* SignInView.swift */,
 				3978D2FF2B8119FD0017526C /* ProfileView.swift */,
 			);
 			path = Auth;
@@ -308,7 +323,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					3978D2C52B80C7670017526C = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -379,12 +394,15 @@
 			files = (
 				3909FA6F2B814DF2007D5A37 /* PhotoItemView.swift in Sources */,
 				3909FA762B814DF2007D5A37 /* PhotoCollectionView.swift in Sources */,
-				3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */,
+				3978D2FB2B8116EB0017526C /* SupabaseClient.swift in Sources */,
 				3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */,
 				39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */,
+				39939DB62B815F900061D0AF /* CameraApp.swift in Sources */,
+				CB7691802B81A02200FB4CFB /* NavigationButtonView.swift in Sources */,
 				3909FA772B814DF2007D5A37 /* PhotoLibrary.swift in Sources */,
-				3978D2FE2B8117670017526C /* AuthView.swift in Sources */,
+				3978D2FE2B8117670017526C /* SignInView.swift in Sources */,
 				3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */,
+				CB76917C2B819FD800FB4CFB /* LandingView.swift in Sources */,
 				3909FA702B814DF2007D5A37 /* ThumbnailView.swift in Sources */,
 				3978D3102B8120000017526C /* Models.swift in Sources */,
 				3909FA792B814DF2007D5A37 /* PhotoCollection.swift in Sources */,
@@ -393,12 +411,15 @@
 				3909FA712B814DF2007D5A37 /* CachedImageManager.swift in Sources */,
 				3978D3172B812A7B0017526C /* Permissions.swift in Sources */,
 				3909FA6D2B814DF2007D5A37 /* ViewfinderView.swift in Sources */,
+				CB7691782B819ED000FB4CFB /* AuthViewModel.swift in Sources */,
 				3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */,
 				3909FA6E2B814DF2007D5A37 /* Camera.swift in Sources */,
 				3909FA732B814DF2007D5A37 /* CameraView.swift in Sources */,
 				3909FA752B814DF2007D5A37 /* DataModel.swift in Sources */,
 				3978D2D12B80C7670017526C /* ContentView.swift in Sources */,
-				3978D3152B8124ED0017526C /* Home.swift in Sources */,
+				3978D3152B8124ED0017526C /* HomeView.swift in Sources */,
+				CB76917E2B81A00C00FB4CFB /* LogoView.swift in Sources */,
+				CB76917A2B819F8300FB4CFB /* SignUpView.swift in Sources */,
 				3978D3002B8119FD0017526C /* ProfileView.swift in Sources */,
 				3909FA722B814DF2007D5A37 /* PhotoView.swift in Sources */,
 				3909FA782B814DF2007D5A37 /* PhotoAsset.swift in Sources */,
@@ -472,6 +493,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -533,6 +555,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -560,6 +583,7 @@
 				CODE_SIGN_ENTITLEMENTS = Foodie/Foodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -603,6 +627,7 @@
 				CODE_SIGN_ENTITLEMENTS = Foodie/Foodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -645,6 +670,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -668,6 +694,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -690,6 +717,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -712,6 +740,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
