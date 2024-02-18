@@ -397,7 +397,6 @@
 				3978D2FB2B8116EB0017526C /* SupabaseClient.swift in Sources */,
 				3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */,
 				39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */,
-				39939DB62B815F900061D0AF /* CameraApp.swift in Sources */,
 				CB7691802B81A02200FB4CFB /* NavigationButtonView.swift in Sources */,
 				3909FA772B814DF2007D5A37 /* PhotoLibrary.swift in Sources */,
 				3978D2FE2B8117670017526C /* SignInView.swift in Sources */,
