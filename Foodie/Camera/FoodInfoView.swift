@@ -11,14 +11,15 @@ import CoreImage
 import UIKit
 import os.log
 import Foundation
+import Combine
 
 // Define simplified model structures
 struct AnalysisResponse: Codable {
-    let items: [Food]
+    let items: [Foods]
 }
 
-struct Food: Codable {
-    let foods: [FoodItem]
+struct Foods: Codable {
+    let food: [FoodItem]
 }
 
 struct FoodItem: Codable {
@@ -115,9 +116,11 @@ class FoodInfoViewModel: ObservableObject {
             let response = try decoder.decode(AnalysisResponse.self, from: data)
             
             for item in response.items {
-                for foodItem in item.foods {
-                    displayNames.append(foodItem.foodInfo.displayName)
-                    confidences.append(foodItem.confidence)
+                for foodItem in item.food {
+                    if foodItem.confidence > 0.5 {
+                        displayNames.append(foodItem.foodInfo.displayName)
+                        confidences.append(foodItem.confidence)
+                    }
                 }
             }
         } catch {
@@ -141,36 +144,138 @@ extension Data {
     }
 }
 
+//struct InputField: View {
+//    @State private var inputText: String = ""
+//    var onSubmit: (String) -> Void
+//
+//    var body: some View {
+//        HStack {
+//            TextField("Enter new item", text: $inputText)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
+//                .onReceive(Just(inputText)) { inputValue in
+//                    print("Current input: \(inputValue)")
+//                }
+//            Button(action: {
+//                // Call the closure with the current input text
+//                onSubmit(inputText)
+//                // Clear the input field after submission
+//                inputText = ""
+//            }) {
+//                Text("Add")
+//            }
+//        }
+//        .padding()
+//    }
+//}
+
+
 struct FoodInfoView: View {
     @ObservedObject var viewModel: FoodInfoViewModel
+    @State private var selectedRows: [Bool] = []
+    @State private var inputText: String = ""
+    @Environment(\.presentationMode) var presentationMode // Add this line
 
     var body: some View {
-        ScrollView {
+        List {
+            imageView
+            itemCountView
+            ForEach(Array(zip(viewModel.displayNames.indices, viewModel.displayNames)), id: \.0) { index, name in
+                foodItemRow(forIndex: index, name: name)
+            }
+            HStack {
+                TextField("Enter new item", text: $inputText)
+                    .textFieldStyle(.roundedBorder)
+                    .onReceive(Just(inputText)) { inputValue in
+                        print("Current input: \(inputValue)")
+                    }
+                Spacer()
+                Button(action: {
+                    print("Button Pressed")
+                    // This closure is called when the "Add" button is pressed.
+                    // Ensure selectedRows is updated to include the new item.
+                    self.selectedRows.append(false)
+                    // Add the new item to the viewModel's displayNames list.
+                    viewModel.displayNames.append(inputText)
+                    // Clear the input field after submission
+                    inputText = ""
+                }) {
+                    Text("Add")
+                }
+            }
+            .padding()
+            .foregroundColor(Color.white)
+            .listRowSeparator(.hidden)
+//            .listRowBackground(Color.gray)
+            .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center) {
+                Spacer()
+                Button("Submit photo info") {
+                    presentationMode.wrappedValue.dismiss()
+                }
+                .padding(3)
+                .background(Color.gray)
+                .foregroundColor(Color.white)
+                .cornerRadius(10)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+//        .background(.gray)
+        .navigationTitle("Food Info")
+//        .onAppear {
+//            // Initialize or update selectedRows when the view appears
+//            // This assumes that displayNames is populated before the view appears
+//            self.selectedRows = Array(repeating: false, count: viewModel.displayNames.count)
+//        }
+        .onChange(of: viewModel.displayNames) { _ in
+            // If displayNames has more items, append false to selectedRows for each new item
+            if viewModel.displayNames.count > self.selectedRows.count {
+                self.selectedRows.append(contentsOf: Array(repeating: false, count: viewModel.displayNames.count - self.selectedRows.count))
+            }
+            // If displayNames has fewer items, remove the excess from selectedRows
+            else if viewModel.displayNames.count < self.selectedRows.count {
+                self.selectedRows.removeSubrange(viewModel.displayNames.count..<self.selectedRows.count)
+            }
+            // If they are equal, no update is needed
+        }
+    }
+
+    // Extracted image view
+    private var imageView: some View {
+        Group {
             if let image = viewModel.displayImage {
                 image
-                    .resizable() // Make sure the image fits well in your layout
-                    .aspectRatio(contentMode: .fit)
+                    .resizable()
+                    .scaledToFit()
                     .padding()
             } else {
                 Text("No image selected")
                     .padding()
             }
-            Text(String(viewModel.displayNames.count))
-            // Assuming you want to display both the name and confidence
-            ForEach(Array(zip(viewModel.displayNames.indices, viewModel.displayNames)), id: \.0) { index, name in
-                HStack {
-                    Text(name)
-                    Spacer()
-                    // Display confidence if available
-//                    if index < viewModel.confidences.count {
-                    Text(String(format: "%.2f", viewModel.confidences[index]))
-//                    }
-                }
-                .padding(.horizontal)
-            }
-            Text(viewModel.uploadResult)
-                .padding()
         }
-        .navigationTitle("Food Info")
+    }
+
+    // Extracted item count view
+    private var itemCountView: some View {
+        Text("Total items: \(viewModel.displayNames.count)")
+    }
+
+    // Extracted view for a single row in the food list
+    private func foodItemRow(forIndex index: Int, name: String) -> some View {
+        HStack {
+            Text(name)
+            Spacer()
+//            Text(String(format: "%.2f", viewModel.confidences[index]))
+            Image(systemName: self.selectedRows.indices.contains(index) && self.selectedRows[index] ? "checkmark.square.fill" : "checkmark.square")
+        }
+        .onTapGesture {
+            if index < self.selectedRows.count {
+                self.selectedRows[index].toggle()  // Ensure index is in bounds
+            }
+        }
+        .padding(5)
+        .background(self.selectedRows.indices.contains(index) && self.selectedRows[index] ? Color.gray.opacity(0.3) : Color.clear)
+        .cornerRadius(10) // Apply corner radius to background
     }
 }
+

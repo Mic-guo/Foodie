@@ -13,11 +13,11 @@ struct FoodieApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if !authViewModel.isAuthenticated {
-                LandingView().environmentObject(authViewModel)
-            } else {
+//            if !authViewModel.isAuthenticated {
+//                LandingView().environmentObject(authViewModel)
+//            } else {
                 HomeView().environmentObject(authViewModel)
-            }
+//            }
         }
     }
 }

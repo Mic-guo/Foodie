@@ -6,7 +6,6 @@ import SwiftUI
 
 struct CameraView: View {
     @StateObject private var model = DataModel()
- 
     private static let barHeightFactor = 0.15
     
     
@@ -15,27 +14,6 @@ struct CameraView: View {
         NavigationStack {
             GeometryReader { geometry in
                 ViewfinderView(image:  $model.viewfinderImage )
-//                    .overlay(alignment: .top) {
-//                        Color.white
-//                            .opacity(0.75)
-//                            .frame(height: geometry.size.height * Self.barHeightFactor)
-//                    }
-//                    .overlay(alignment: .center)  {
-//                        Color.black
-//                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 25, height: 25)))
-//                            .frame(height: geometry.size.height * (1 - (Self.barHeightFactor * 2)))
-//                            .padding(.top, 10)
-//                            .padding([.leading, .trailing], 25)
-//                            .accessibilityElement()
-//                            .accessibilityLabel("View Finder")
-//                            .accessibilityAddTraits([.isImage])
-//                    }
-//                    .overlay(alignment: .bottom) {
-//                        buttonsView()
-//                            .frame(height: geometry.size.height * Self.barHeightFactor)
-//                            .background(.gray)
-//                    }
-//                    .background(.gray)
                     .inverseMask(
                                 RoundedRectangle(cornerRadius: 25)
                                     .frame(width: max(geometry.size.width - 50, 0), height: max(geometry.size.width, 0))
@@ -74,6 +52,7 @@ struct CameraView: View {
     private func foodButton() -> some View {
         NavigationLink {
             FoodInfoView(viewModel: model.camera.viewModel ?? FoodInfoViewModel())
+                .background(.gray)
         } label: {
             Label {
                 Text("Get Info")
