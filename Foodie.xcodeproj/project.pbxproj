@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3909FA6D2B814DF2007D5A37 /* ViewfinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA5F2B814DF1007D5A37 /* ViewfinderView.swift */; };
+		3909FA6E2B814DF2007D5A37 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA602B814DF1007D5A37 /* Camera.swift */; };
+		3909FA6F2B814DF2007D5A37 /* PhotoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA612B814DF1007D5A37 /* PhotoItemView.swift */; };
+		3909FA702B814DF2007D5A37 /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA622B814DF1007D5A37 /* ThumbnailView.swift */; };
+		3909FA712B814DF2007D5A37 /* CachedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA632B814DF1007D5A37 /* CachedImageManager.swift */; };
+		3909FA722B814DF2007D5A37 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA642B814DF1007D5A37 /* PhotoView.swift */; };
+		3909FA732B814DF2007D5A37 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA652B814DF1007D5A37 /* CameraView.swift */; };
+		3909FA742B814DF2007D5A37 /* PhotoAssetCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA662B814DF1007D5A37 /* PhotoAssetCollection.swift */; };
+		3909FA752B814DF2007D5A37 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA672B814DF2007D5A37 /* DataModel.swift */; };
+		3909FA762B814DF2007D5A37 /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA682B814DF2007D5A37 /* PhotoCollectionView.swift */; };
+		3909FA772B814DF2007D5A37 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA692B814DF2007D5A37 /* PhotoLibrary.swift */; };
+		3909FA782B814DF2007D5A37 /* PhotoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA6A2B814DF2007D5A37 /* PhotoAsset.swift */; };
+		3909FA792B814DF2007D5A37 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3909FA6B2B814DF2007D5A37 /* PhotoCollection.swift */; };
 		3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2C92B80C7670017526C /* FoodieApp.swift */; };
 		3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */; };
 		3978D2D12B80C7670017526C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D2D02B80C7670017526C /* ContentView.swift */; };
@@ -26,6 +39,11 @@
 		3978D30C2B811AF30017526C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3978D30B2B811AF30017526C /* Supabase */; };
 		3978D3102B8120000017526C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D30F2B8120000017526C /* Models.swift */; };
 		3978D3152B8124ED0017526C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* Home.swift */; };
+		3978D3172B812A7B0017526C /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3162B812A7B0017526C /* Permissions.swift */; };
+		3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3182B8132FA0017526C /* PermissionsView.swift */; };
+		39939DB62B815F900061D0AF /* CameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB52B815F900061D0AF /* CameraApp.swift */; };
+		39939DB82B8167910061D0AF /* InverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB72B8167910061D0AF /* InverseMask.swift */; };
+		39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB92B8169A50061D0AF /* FoodInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +64,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3909FA5F2B814DF1007D5A37 /* ViewfinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewfinderView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/ViewfinderView.swift"; sourceTree = "<group>"; };
+		3909FA602B814DF1007D5A37 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/Camera.swift"; sourceTree = "<group>"; };
+		3909FA612B814DF1007D5A37 /* PhotoItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoItemView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoItemView.swift"; sourceTree = "<group>"; };
+		3909FA622B814DF1007D5A37 /* ThumbnailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThumbnailView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/ThumbnailView.swift"; sourceTree = "<group>"; };
+		3909FA632B814DF1007D5A37 /* CachedImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CachedImageManager.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/CachedImageManager.swift"; sourceTree = "<group>"; };
+		3909FA642B814DF1007D5A37 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoView.swift"; sourceTree = "<group>"; };
+		3909FA652B814DF1007D5A37 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/CameraView.swift"; sourceTree = "<group>"; };
+		3909FA662B814DF1007D5A37 /* PhotoAssetCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAssetCollection.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoAssetCollection.swift"; sourceTree = "<group>"; };
+		3909FA672B814DF2007D5A37 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/DataModel.swift"; sourceTree = "<group>"; };
+		3909FA682B814DF2007D5A37 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollectionView.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoCollectionView.swift"; sourceTree = "<group>"; };
+		3909FA692B814DF2007D5A37 /* PhotoLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoLibrary.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoLibrary.swift"; sourceTree = "<group>"; };
+		3909FA6A2B814DF2007D5A37 /* PhotoAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAsset.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoAsset.swift"; sourceTree = "<group>"; };
+		3909FA6B2B814DF2007D5A37 /* PhotoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoCollection.swift; path = "../../../../../Downloads/Capturing Photos.swiftpm/App/PhotoCollection.swift"; sourceTree = "<group>"; };
 		3978D2C62B80C7670017526C /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3978D2C92B80C7670017526C /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
 		3978D2CE2B80C7670017526C /* Foodie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foodie.xcdatamodel; sourceTree = "<group>"; };
@@ -64,6 +95,11 @@
 		3978D30F2B8120000017526C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3978D3132B8123ED0017526C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3978D3142B8124EC0017526C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		3978D3162B812A7B0017526C /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
+		3978D3182B8132FA0017526C /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		39939DB52B815F900061D0AF /* CameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraApp.swift; sourceTree = "<group>"; };
+		39939DB72B8167910061D0AF /* InverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseMask.swift; sourceTree = "<group>"; };
+		39939DB92B8169A50061D0AF /* FoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +133,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3909FA5E2B814DD5007D5A37 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				3909FA632B814DF1007D5A37 /* CachedImageManager.swift */,
+				3909FA602B814DF1007D5A37 /* Camera.swift */,
+				3909FA652B814DF1007D5A37 /* CameraView.swift */,
+				39939DB52B815F900061D0AF /* CameraApp.swift */,
+				3909FA672B814DF2007D5A37 /* DataModel.swift */,
+				3909FA6A2B814DF2007D5A37 /* PhotoAsset.swift */,
+				3909FA662B814DF1007D5A37 /* PhotoAssetCollection.swift */,
+				3909FA6B2B814DF2007D5A37 /* PhotoCollection.swift */,
+				3909FA682B814DF2007D5A37 /* PhotoCollectionView.swift */,
+				3909FA612B814DF1007D5A37 /* PhotoItemView.swift */,
+				3909FA692B814DF2007D5A37 /* PhotoLibrary.swift */,
+				3909FA642B814DF1007D5A37 /* PhotoView.swift */,
+				3909FA622B814DF1007D5A37 /* ThumbnailView.swift */,
+				3909FA5F2B814DF1007D5A37 /* ViewfinderView.swift */,
+				39939DB72B8167910061D0AF /* InverseMask.swift */,
+				39939DB92B8169A50061D0AF /* FoodInfoView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		3978D2BD2B80C7670017526C = {
 			isa = PBXGroup;
 			children = (
@@ -121,16 +180,19 @@
 			isa = PBXGroup;
 			children = (
 				3978D3132B8123ED0017526C /* Info.plist */,
+				3909FA5E2B814DD5007D5A37 /* Camera */,
 				3978D30E2B811FF20017526C /* Models */,
 				3978D2FC2B8117530017526C /* Auth */,
 				3978D2C92B80C7670017526C /* FoodieApp.swift */,
 				3978D2D02B80C7670017526C /* ContentView.swift */,
+				3978D2FA2B8116EB0017526C /* Supabase.swift */,
+				3978D3142B8124EC0017526C /* Home.swift */,
+				3978D3162B812A7B0017526C /* Permissions.swift */,
+				3978D3182B8132FA0017526C /* PermissionsView.swift */,
 				3978D2D22B80C76A0017526C /* Assets.xcassets */,
 				3978D2D42B80C76A0017526C /* Foodie.entitlements */,
 				3978D2CD2B80C7670017526C /* Foodie.xcdatamodeld */,
 				3978D2D52B80C76A0017526C /* Preview Content */,
-				3978D2FA2B8116EB0017526C /* Supabase.swift */,
-				3978D3142B8124EC0017526C /* Home.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -318,14 +380,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3909FA6F2B814DF2007D5A37 /* PhotoItemView.swift in Sources */,
+				3909FA762B814DF2007D5A37 /* PhotoCollectionView.swift in Sources */,
 				3978D2FB2B8116EB0017526C /* Supabase.swift in Sources */,
 				3978D2CA2B80C7670017526C /* FoodieApp.swift in Sources */,
+				39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */,
+				39939DB62B815F900061D0AF /* CameraApp.swift in Sources */,
+				3909FA772B814DF2007D5A37 /* PhotoLibrary.swift in Sources */,
 				3978D2FE2B8117670017526C /* AuthView.swift in Sources */,
+				3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */,
+				3909FA702B814DF2007D5A37 /* ThumbnailView.swift in Sources */,
 				3978D3102B8120000017526C /* Models.swift in Sources */,
+				3909FA792B814DF2007D5A37 /* PhotoCollection.swift in Sources */,
+				39939DB82B8167910061D0AF /* InverseMask.swift in Sources */,
+				3909FA742B814DF2007D5A37 /* PhotoAssetCollection.swift in Sources */,
+				3909FA712B814DF2007D5A37 /* CachedImageManager.swift in Sources */,
+				3978D3172B812A7B0017526C /* Permissions.swift in Sources */,
+				3909FA6D2B814DF2007D5A37 /* ViewfinderView.swift in Sources */,
 				3978D2CF2B80C7670017526C /* Foodie.xcdatamodeld in Sources */,
+				3909FA6E2B814DF2007D5A37 /* Camera.swift in Sources */,
+				3909FA732B814DF2007D5A37 /* CameraView.swift in Sources */,
+				3909FA752B814DF2007D5A37 /* DataModel.swift in Sources */,
 				3978D2D12B80C7670017526C /* ContentView.swift in Sources */,
 				3978D3152B8124ED0017526C /* Home.swift in Sources */,
 				3978D3002B8119FD0017526C /* ProfileView.swift in Sources */,
+				3909FA722B814DF2007D5A37 /* PhotoView.swift in Sources */,
+				3909FA782B814DF2007D5A37 /* PhotoAsset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +567,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera to track your food journey!";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow us to map where you've eaten!";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -506,6 +589,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.Foodie;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = test.foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -526,9 +610,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = JX23VX3L67;
 				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Foodie/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera to track your food journey!";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow us to map where you've eaten!";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -545,6 +632,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Foodie.Foodie;
+				"PRODUCT_BUNDLE_IDENTIFIER[sdk=iphoneos*]" = test.foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

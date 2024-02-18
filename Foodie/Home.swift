@@ -7,12 +7,28 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeView: View {
+    init() {
+        UINavigationBar.applyCustomAppearance()
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        PermissionsView()
+        CameraView()
+    }
+}
+
+fileprivate extension UINavigationBar {
+    
+    static func applyCustomAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 
 #Preview {
-    Home()
+    HomeView()
 }
+

@@ -1,18 +1,30 @@
+///*
+//See the License.txt file for this sample’s licensing information.
+//*/
 //
-//  CameraApp.swift
-//  Foodie
+//import SwiftUI
 //
-//  Created by Michael Xcode on 2/17/24.
+//@main
+//struct CameraApp: App {
 //
-
-import SwiftUI
-
-struct CameraApp: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    CameraApp()
-}
+//    init() {
+//        UINavigationBar.applyCustomAppearance()
+//    }
+//    
+//    var body: some Scene {
+//        WindowGroup {
+//            CameraView()
+//        }
+//    }
+//}
+//
+//fileprivate extension UINavigationBar {
+//    
+//    static func applyCustomAppearance() {
+//        let appearance = UINavigationBarAppearance()
+//        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+//        UINavigationBar.appearance().standardAppearance = appearance
+//        UINavigationBar.appearance().compactAppearance = appearance
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+//    }
+//}
