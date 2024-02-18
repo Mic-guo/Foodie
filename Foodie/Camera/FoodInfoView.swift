@@ -10,27 +10,58 @@ import AVFoundation
 import CoreImage
 import UIKit
 import os.log
+import Foundation
+
+// Define simplified model structures
+struct AnalysisResponse: Codable {
+    let items: [Food]
+}
+
+struct Food: Codable {
+    let foods: [FoodItem]
+}
+
+struct FoodItem: Codable {
+    let confidence: Double
+    let foodInfo: FoodInfo
+    
+    enum CodingKeys: String, CodingKey {
+        case confidence
+        case foodInfo = "food_info"
+    }
+}
+
+struct FoodInfo: Codable {
+    let displayName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case displayName = "display_name"
+    }
+}
+
 
 class FoodInfoViewModel: ObservableObject {
     @Published var uploadResult: String = "Still loading..."
     @Published var displayImage: Image?
+    @Published var displayNames: [String] = []
+    @Published var confidences: [Double] = []
     
     func uploadImage(imageData: Data) {
-        let url = URL(string: "https://vision.foodvisor.io/api/1.0/en/analysis/")!
+        guard let url = URL(string: "https://vision.foodvisor.io/api/1.0/en/analysis/") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         
-        // Set additional headers
+        let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("Api-Key ndhsa84A.XcfqXkcDgOcBxfVKqp9RHKCDUVxv4CZM", forHTTPHeaderField: "Authorization")
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         var body = Data()
-        
-        let boundary = "Boundary-\(UUID().uuidString)"
         body.append("--\(boundary)\r\n".data(using: .utf8)!)
         body.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpeg\"\r\n".data(using: .utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
         body.append(imageData)
         body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+
         
         // Additionally, convert imageData to Image for SwiftUI and assign to displayImage
         DispatchQueue.main.async {
@@ -43,33 +74,54 @@ class FoodInfoViewModel: ObservableObject {
         }
 
         // Sending the request
-        let task = URLSession.shared.uploadTask(with: request, from: body) { data, response, error in
-            if let httpResponse = response as? HTTPURLResponse {
-                self.uploadResult = "HTTP Status Code: \(httpResponse.statusCode)"
-            }
+        let task = URLSession.shared.uploadTask(with: request, from: body) { [weak self] data, response, error in
+            guard let self = self else { return }
             guard let data = data, error == nil else {
-                self.uploadResult = "Error Unkown error"
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                DispatchQueue.main.async {
+                    self.uploadResult = "Error: \(error?.localizedDescription ?? "Unknown error")"
+                }
                 return
             }
-            
-            do {
-                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    DispatchQueue.main.async {
-                        self.uploadResult = jsonResult.description
-                    }
-                }
-                else {
-                    self.uploadResult = "Nothing as JSON idk why"
-                }
-            } catch {
-                self.uploadResult = "Failed to convert to JSON "
-                print("Failed to convert data to JSON")
-            }
+            (self.displayNames, self.confidences) = parseJSON(data: data)
+//            do {
+//                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+//                    DispatchQueue.main.async {
+//                        
+//                        self.uploadResult = jsonResult.description
+//                    }
+//                }
+//                else {
+//                    self.uploadResult = "Nothing as JSON idk why"
+//                }
+//            } catch {
+//                self.uploadResult = "Failed to convert to JSON "
+//            }
         }
         task.resume()
         
     }
+    
+    func parseJSON(data: Data) -> ([String], [Double]) {
+        let decoder = JSONDecoder()
+        var displayNames: [String] = []
+        var confidences: [Double] = []
+
+        do {
+            let response = try decoder.decode(AnalysisResponse.self, from: data)
+            
+            for food in response.items {
+                for foodItem in food.foods {
+                    displayNames.append(foodItem.foodInfo.displayName)
+                    confidences.append(foodItem.confidence)
+                }
+            }
+        } catch {
+            print("Failed to decode JSON: \(error)")
+        }
+        
+        return (displayNames, confidences)
+    }
+
 }
 
 // Helper extension to easily append strings to Data
@@ -102,9 +154,3 @@ struct FoodInfoView: View {
         .navigationTitle("Food Info")
     }
 }
-
-//struct FoodInfoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FoodInfoView()
-//    }
-//}

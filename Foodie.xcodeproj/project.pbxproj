@@ -41,7 +41,6 @@
 		3978D3152B8124ED0017526C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3142B8124EC0017526C /* HomeView.swift */; };
 		3978D3172B812A7B0017526C /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3162B812A7B0017526C /* Permissions.swift */; };
 		3978D3192B8132FA0017526C /* PermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3978D3182B8132FA0017526C /* PermissionsView.swift */; };
-		39939DB62B815F900061D0AF /* CameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB52B815F900061D0AF /* CameraApp.swift */; };
 		39939DB82B8167910061D0AF /* InverseMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB72B8167910061D0AF /* InverseMask.swift */; };
 		39939DBA2B8169A50061D0AF /* FoodInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39939DB92B8169A50061D0AF /* FoodInfoView.swift */; };
 		CB7691782B819ED000FB4CFB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7691772B819ED000FB4CFB /* AuthViewModel.swift */; };
@@ -103,7 +102,6 @@
 		3978D3142B8124EC0017526C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3978D3162B812A7B0017526C /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		3978D3182B8132FA0017526C /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
-		39939DB52B815F900061D0AF /* CameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraApp.swift; sourceTree = "<group>"; };
 		39939DB72B8167910061D0AF /* InverseMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InverseMask.swift; sourceTree = "<group>"; };
 		39939DB92B8169A50061D0AF /* FoodInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoView.swift; sourceTree = "<group>"; };
 		CB7691772B819ED000FB4CFB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				3909FA632B814DF1007D5A37 /* CachedImageManager.swift */,
 				3909FA602B814DF1007D5A37 /* Camera.swift */,
 				3909FA652B814DF1007D5A37 /* CameraView.swift */,
-				39939DB52B815F900061D0AF /* CameraApp.swift */,
 				3909FA672B814DF2007D5A37 /* DataModel.swift */,
 				3909FA6A2B814DF2007D5A37 /* PhotoAsset.swift */,
 				3909FA662B814DF1007D5A37 /* PhotoAssetCollection.swift */,
