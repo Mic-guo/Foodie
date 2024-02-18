@@ -9,25 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @State var isAuthenticated = false
-
-      var body: some View {
-//        Group {
-//          if isAuthenticated {
-//            ProfileView()
-//          } else {
-//            AuthView()
-//          }
+    @StateObject private var authViewModel = AuthViewModel()
+    
+    var body: some View {
+//        if !authViewModel.isAuthenticated {
+//            LandingView()
+//        } else {
+//            HomeView()
 //        }
-//        .task {
-//          for await state in await supabase.auth.authStateChanges {
-//            if [.initialSession, .signedIn, .signedOut].contains(state.event) {
-//              isAuthenticated = state.session != nil
-//            }
-//          }
-//        }
-          HomeView()
-      }
+        Text("Useless ahhh page")
+    }
 }
 
 

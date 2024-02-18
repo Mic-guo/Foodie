@@ -8,10 +8,16 @@
 import SwiftUI
 
 @main
-struct tapApp: App {
+struct FoodieApp: App {
+    @StateObject private var authViewModel = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !authViewModel.isAuthenticated {
+                LandingView().environmentObject(authViewModel)
+            } else {
+                HomeView().environmentObject(authViewModel)
+            }
         }
     }
 }

@@ -8,70 +8,72 @@
 import SwiftUI
 import Supabase
 
-struct AuthView: View {
-  @State var email = ""
-  @State var isLoading = false
-  @State var result: Result<Void, Error>?
+struct SignInView: View {
+    @State var email = ""
+    @State var password = "" // Add a state variable for the password
+    @State var isLoading = false
+    @State var result: Result<Void, Error>?
+    @EnvironmentObject var authViewModel: AuthViewModel
 
-  var body: some View {
-    Form {
-      Section {
-        TextField("Email", text: $email)
-          .textContentType(.emailAddress)
-          .textInputAutocapitalization(.never)
-          .autocorrectionDisabled()
-      }
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Email", text: $email)
+                        .textContentType(.emailAddress)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    SecureField("Password", text: $password) // Add a SecureField for password input
+                        .textContentType(.password)
+                }
 
-      Section {
-        Button("Sign in") {
-          signInButtonTapped()
+                Section {
+                    Button("Sign in") {
+                        signInButtonTapped()
+                    }
+                    .disabled(email.isEmpty || password.isEmpty) // Disable the button if email or password is empty
+
+                    if isLoading {
+                        ProgressView()
+                    }
+                }
+
+                if let result {
+                    Section {
+                        switch result {
+                        case .success:
+                            Text("Login successful.").foregroundStyle(.green)
+                            
+                        case .failure(let error):
+                            Text(error.localizedDescription).foregroundStyle(.red)
+                        }
+                    }
+                }
+            }
+            .navigationBarTitle("Sign In", displayMode: .inline)
         }
-
-        if isLoading {
-          ProgressView()
-        }
-      }
-
-      if let result {
-        Section {
-          switch result {
-          case .success:
-            Text("Check your inbox.")
-          case .failure(let error):
-            Text(error.localizedDescription).foregroundStyle(.red)
-          }
-        }
-      }
     }
-    .onOpenURL(perform: { url in
-      Task {
-        do {
-          try await supabase.auth.session(from: url)
-        } catch {
-          self.result = .failure(error)
+    
+
+    func signInButtonTapped() {
+        Task {
+            isLoading = true
+            defer { isLoading = false }
+
+            do {
+                // Use signIn with email and password
+                _ = try await supabase.auth.signIn(email: email, password: password)
+                result = .success(())
+                DispatchQueue.main.async {
+                    authViewModel.isAuthenticated = true
+                }
+            } catch {
+                result = .failure(error)
+            }
         }
-      }
-    })
-  }
-
-  func signInButtonTapped() {
-    Task {
-      isLoading = true
-      defer { isLoading = false }
-
-      do {
-        try await supabase.auth.signInWithOTP(
-            email: email,
-            redirectTo: URL(string: "io.supabase.user-management://login-callback")
-        )
-        result = .success(())
-      } catch {
-        result = .failure(error)
-      }
     }
-  }
 }
 
 #Preview {
-    AuthView()
+    SignInView()
 }
