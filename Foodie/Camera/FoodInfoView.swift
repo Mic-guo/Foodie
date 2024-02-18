@@ -82,20 +82,25 @@ class FoodInfoViewModel: ObservableObject {
                 }
                 return
             }
-            (self.displayNames, self.confidences) = parseJSON(data: data)
-//            do {
-//                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//                    DispatchQueue.main.async {
-//                        
-//                        self.uploadResult = jsonResult.description
-//                    }
-//                }
-//                else {
-//                    self.uploadResult = "Nothing as JSON idk why"
-//                }
-//            } catch {
-//                self.uploadResult = "Failed to convert to JSON "
-//            }
+            do {
+                if let jsonResult = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    DispatchQueue.main.async {
+                        
+                        self.uploadResult = jsonResult.description
+                    }
+                }
+                else {
+                    self.uploadResult = "Nothing as JSON idk why"
+                }
+            } catch {
+                self.uploadResult = "Failed to convert to JSON "
+            }
+            
+            DispatchQueue.main.async {
+                let (names, confidences) = self.parseJSON(data: data)
+                self.displayNames = names
+                self.confidences = confidences
+            }
         }
         task.resume()
         
@@ -109,18 +114,21 @@ class FoodInfoViewModel: ObservableObject {
         do {
             let response = try decoder.decode(AnalysisResponse.self, from: data)
             
-            for food in response.items {
-                for foodItem in food.foods {
+            for item in response.items {
+                for foodItem in item.foods {
                     displayNames.append(foodItem.foodInfo.displayName)
                     confidences.append(foodItem.confidence)
                 }
             }
         } catch {
-            print("Failed to decode JSON: \(error)")
+            DispatchQueue.main.async {
+                self.uploadResult = "Failed to decode JSON: \(error)"
+            }
         }
         
         return (displayNames, confidences)
     }
+
 
 }
 
@@ -147,7 +155,19 @@ struct FoodInfoView: View {
                 Text("No image selected")
                     .padding()
             }
-
+            Text(String(viewModel.displayNames.count))
+            // Assuming you want to display both the name and confidence
+            ForEach(Array(zip(viewModel.displayNames.indices, viewModel.displayNames)), id: \.0) { index, name in
+                HStack {
+                    Text(name)
+                    Spacer()
+                    // Display confidence if available
+//                    if index < viewModel.confidences.count {
+                    Text(String(format: "%.2f", viewModel.confidences[index]))
+//                    }
+                }
+                .padding(.horizontal)
+            }
             Text(viewModel.uploadResult)
                 .padding()
         }
